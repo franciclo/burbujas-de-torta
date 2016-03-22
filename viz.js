@@ -31,6 +31,7 @@ function buscarDatasets(sitio_url){
   }
   xhr.send();
 }
+
 document.querySelector('section button').addEventListener('click', function(e){
   var sitio_url = e.target.parentNode.querySelector('input').value;
   buscarDatasets(sitio_url);
@@ -40,7 +41,6 @@ function datasetsDisponibles(datas){
   if(datas.length === 0) throw "No hay datasets";
   document.querySelector('section p').style.display = 'none';
   document.querySelector('section ul').style.display = 'block';
-  console.log(datas);
   var ul = document.querySelector('ul');
   ul.innerHTML = '';
   datas.forEach(function(v){
