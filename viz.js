@@ -15,7 +15,8 @@ var burbuja_input = document.getElementById('burbuja_input');
 var label_burbu = document.getElementById('label');
 
 //Get .csv
-d3.csv("acceso-informacion-publica.csv", function(csv_data) {
+d3.csv("acceso-a-la-informacion-publica.csv", function(csv_data) {
+  if(csv_data === null) throw "No hay datos";
 
   //Graficar!
   document.querySelector('aside button').addEventListener('click', function(e){
@@ -25,6 +26,7 @@ d3.csv("acceso-informacion-publica.csv", function(csv_data) {
   });
 
   //Cargar las opciones de datos
+
   Object.keys(csv_data[0]).forEach(function(v){
     var opt = document.createElement('option');
     opt.innerHTML = opt.value = v;
@@ -80,7 +82,8 @@ d3.csv("acceso-informacion-publica.csv", function(csv_data) {
     //Ubicar burbujas y mostrar sus referencias al pasar el cursor
     burbujas
       .enter()
-      .append("g")      
+      .append("g")
+      .attr("class", "burbuja")   
       .attr("transform", function(d) { 
         return "translate(" + d.x + "," + d.y+ ")"; 
       })

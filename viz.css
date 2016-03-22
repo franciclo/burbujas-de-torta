@@ -39,3 +39,6 @@ max-height: 400px;
 overflow: auto;
 margin-bottom: 10px;
 }
+g.burbuja {
+cursor: pointer;
+}
