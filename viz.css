@@ -1,44 +1,73 @@
 html{
-height: 100%;
+	height: 100%;
 }
 body{
-display: flex;
-height: 100%;
-margin: 0 10px;
+	display: flex;
+	height: 100%;
+	margin: 0 10px;
+}
+section{
+	position: absolute;
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background: white;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+section>p{
+	display: none;
+	width: 220px;
+}
+section ul li{
+	cursor: pointer;
+	font-size: 17px;
+}
+section ul li p {
+    margin: 10px 0 0 0;
+}
+section ul li p.desc{
+	color:#555;
+	font-size: 14px;
+}
+section ul li:hover{
+	background: #eee;
 }
 aside{
-display: flex;
-flex:1;
-flex-direction: column;
-justify-content: space-between;
+	display: flex;
+	flex:1;
+	flex-direction: column;
+	justify-content: space-between;
 }
 button{
-display: block;
-margin: 18px 0;
+	display: block;
+	margin: 18px 0;
 }
 label{
-display: block;
-margin-top: 10px;
+	display: block;
+	margin-top: 10px;
 }
 span.ref-color {
-width: 10px;
-height: 12px;
-margin-right: 5px;
-display: inline-block;
+	width: 10px;
+	height: 12px;
+	margin-right: 5px;
+	display: inline-block;
 }
 #label{
-font-size:25px;
+	font-size:25px;
 }
 p.gris {
-margin: 0;
-font-size: 15px;
-color: #515151;
+	margin: 0;
+	font-size: 15px;
+	color: #515151;
 }
 #refes{
-max-height: 400px;
-overflow: auto;
-margin-bottom: 10px;
+	max-height: 400px;
+	overflow: auto;
+	margin-bottom: 10px;
 }
 g.burbuja {
-cursor: pointer;
+	cursor: pointer;
 }
