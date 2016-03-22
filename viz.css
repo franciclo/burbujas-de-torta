@@ -1,0 +1,41 @@
+html{
+height: 100%;
+}
+body{
+display: flex;
+height: 100%;
+margin: 0 10px;
+}
+aside{
+display: flex;
+flex:1;
+flex-direction: column;
+justify-content: space-between;
+}
+button{
+display: block;
+margin: 18px 0;
+}
+label{
+display: block;
+margin-top: 10px;
+}
+span.ref-color {
+width: 10px;
+height: 12px;
+margin-right: 5px;
+display: inline-block;
+}
+#label{
+font-size:25px;
+}
+p.gris {
+margin: 0;
+font-size: 15px;
+color: #515151;
+}
+#refes{
+max-height: 400px;
+overflow: auto;
+margin-bottom: 10px;
+}

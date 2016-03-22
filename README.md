@@ -1,2 +1,2 @@
-# burbujas-de-torta
-Grafico para cruzar datos de un mismo dataset (.csv)
+# Burbujas de torta
+Grafico para cruzar datos de un dataset (.csv)
