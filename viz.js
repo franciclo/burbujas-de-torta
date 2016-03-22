@@ -3,9 +3,9 @@ function loading(e){
   var span = document.createElement('span');
   e.appendChild(span);
   var int = setInterval(function() {
-      if ((span.innerHTML += '.').length == 4) e.innerHTML = '';
+      if ((span.innerHTML += '.').length == 4) span.innerHTML = '';
   }, 300);
-  return function stop(){ clearInterval( int ) };
+  return function stop(){ clearInterval( int ); e.removeChild(span); };
 }
 //Buscar datasets
 function buscarDatasets(sitio_url){
@@ -39,7 +39,7 @@ document.querySelector('section button').addEventListener('click', function(e){
 
 function datasetsDisponibles(datas){
   if(datas.length === 0) throw "No hay datasets";
-  document.querySelector('section p').style.display = 'none';
+  document.querySelector('section>p').style.display = 'none';
   document.querySelector('section ul').style.display = 'block';
   var ul = document.querySelector('ul');
   ul.innerHTML = '';
@@ -78,8 +78,6 @@ function setGrafico(e){
 
   //Get .csv
   d3.csv(dataset, function(csv_data) {
-    loadingStop();
-    document.querySelector('section').style.display = 'none';
     if(csv_data === null) throw "No hay datos";
 
     //Graficar!
@@ -90,13 +88,16 @@ function setGrafico(e){
     });
 
     //Cargar las opciones de datos
-
     Object.keys(csv_data[0]).forEach(function(v){
       var opt = document.createElement('option');
       opt.innerHTML = opt.value = v;
       torta_input.appendChild(opt);
       burbuja_input.appendChild(opt.cloneNode(true));
     });
+
+    loadingStop();
+    document.querySelector('section').style.display = 'none';
+
 
     function Graficar(burbuja, torta){
       //Resetear grafico
