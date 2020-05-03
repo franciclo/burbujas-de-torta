@@ -1,5 +1,3 @@
 # Burbujas de torta
 
-Grafico para cruzar datos de un dataset (.csv) alojados en sitios basados en CKAN<br>
-
-![alt tag](http://s30.postimg.org/tuh9bgi8h/burbuja_tortas.png)
+Busca datasets en CKAN y permite elegir una variable categórica armar un gráfico de burbujas donde el volúmen de cada una es la cantidad de ocurrencias y dentro de cada burbuja grafica una torta mostrando las ocurrencias de otra variable categorica.
